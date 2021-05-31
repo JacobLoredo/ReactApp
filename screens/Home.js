@@ -4,30 +4,31 @@ import { Card, FAB } from "react-native-paper";
 
 const Home = ({navigation}) => {
     const data = [
-        { id: 1, name: "hola", position: "web dev" },
-        { id: 2, name: "hol", position: "web de" },
-        { id: 3, name: "ho", position: "web d" },
-        { id: 4, name: "h", position: "web " },
-        { id: 5, name: "ho", position: "web d" },
-        { id: 6, name: "h", position: "web " },
-        { id: 7, name: "ho", position: "web d" },
-        { id: 8, name: "h", position: "web " },
-        { id: 9, name: "ho", position: "web d" },
-        { id: 10, name: "h", position: "web " },
-        { id: 11, name: "ho", position: "web d" },
-        { id: 12, name: "h", position: "web " },
-        { id: 13, name: "ho", position: "web d" },
-        { id: 14, name: "h", position: "web " },
+        { id: 1, name: "hola",email:"abc@abc.com",salary:"500",phone:"123456789", position: "web dev",
+         picture:"https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80"},
+        { id: 2, name: "hol",email:"coreo@abc.com",salary:"1000",phone:"123456789", position: "web dev", 
+        picture:"https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80"},
+        { id: 3, name: "ho",email:"cloe@abc.com",salary:"800",phone:"123456789", position: "web dev", 
+        picture:"https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80"},
+        { id: 4, name: "h",email:"asfe@abc.com",salary:"2400",phone:"123456789", position: "web dev", 
+        picture:"https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80"},
+        { id: 5, name: "ho",email:"caer@abc.com",salary:"8900",phone:"123456789", position: "web dev", 
+        picture:"https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80"},
+        { id: 6, name: "hol",email:"case@abc.com",salary:"25400",phone:"123456789", position: "web dev", 
+        picture:"https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80"},
+        { id: 7, name: "hola",email:"cerkk@abc.com",salary:"000",phone:"123456789", position: "web dev", 
+        picture:"https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80"}
+
     ]
     const renderList = ((item) => {
         return (
             <Card style={styles.mycard}
-            onPress={()=>navigation.navigate("Profile")}
+            onPress={()=>navigation.navigate("Profile",{item})}
             >
                 <View style={styles.cardView}>
                     <Image
                         style={{ width: 60, height: 60, borderRadius: 30 }}
-                        source={{ uri: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80" }}
+                        source={{ uri: item.picture }}
                     >
                     </Image>
                     <View style={{ marginLeft: 20 }}>

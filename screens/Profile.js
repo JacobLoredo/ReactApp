@@ -7,7 +7,8 @@ import { Ionicons, Entypo, FontAwesome5 } from "@expo/vector-icons";
 
 
 
-const Profile=() => {
+const Profile=(props) => {
+    const {id,name,picture,phone,salary,email,position}=props.route.params.item
     const openDialog=()=>{
         if(Platform.OS==="android"){
             Linking.openURL("tel:4442994241")
@@ -23,34 +24,34 @@ const Profile=() => {
             />
             <View style={styles.viewImageStyle}>
                 <Image style={styles.ImageStyl}
-                    source={{ uri: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" }}
+                    source={{ uri: picture}}
                 >
 
                 </Image>
             </View>
             <View style={{ alignItems: "center",margin:20 }}>
-                <Title >Ramesh verma</Title>
-                <Text style={styles.myText}>Web developer</Text>
+                <Title >{name}</Title>
+                <Text style={styles.myText}>{position}</Text>
             </View>
             <Card style={styles.myCard} onPress={()=>{
                 Linking.openURL("mailto:yeicob_loredo@hotmail.com")
             }}>
                 <View style={styles.cardContent}>
                     <Ionicons name="mail" size={32} color="#006aff" />
-                    <Text style={styles.myText}>yeicob_loredo@hotmail.com</Text>
+                    <Text style={styles.myText}>{email}</Text>
                 </View>
             </Card>
             <Card style={styles.myCard} onPress={()=>openDialog()}>
                 <View style={styles.cardContent}>
                     <Entypo name="phone" size={32} color="#006aff" />
-                    <Text style={styles.myText}>4442994241</Text>
+                    <Text style={styles.myText}>{phone}</Text>
                 </View>
 
             </Card>
             <Card style={styles.myCard}>
                 <View style={styles.cardContent}>
                     <FontAwesome5 name="money-bill" size={32} color="#006aff" />
-                    <Text style={styles.myText}>yeicob_loredo@hotmail.com</Text>
+                    <Text style={styles.myText}>{salary}</Text>
                 </View>
             </Card>
             <View style={{flexDirection:"row",justifyContent:"space-around",padding:5}}>
